@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../../css/bootstrap.css" rel="stylesheet" media="screen">
+<title>雑談・質問 掲示板</title>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+<a href="../../" class="navbar-brand">HOME</a>
+</div>
+<div class="navbar-collapse collapse" id="navbar-main">
+<ul class="nav navbar-nav">
+<li class="dropdown">
+<li><a href="../../yasudakazutaka/">自己紹介</a></li>
+<li><a href="../../html">Web作成 </a></li>
+<li><a href="../../yahoonews">ヤフーコメランキング </a></li>
+<li><a href="../../toeic">TOEIC </a></li>
+<li><a href="../../recollection">事件まとめ </a></li>
+<li><a href="../../othello">オセロ必勝法 </a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="container">
+<br><br>
+<div id="header" class="clearfix">
+<div id="boxD">
+<h2><a href="http://uguisu.skr.jp/">雑談・質問 掲示板</a></h2>
+<p>記事 No.<!--NO--> への返信</p>
+</div>
+</div>
+
+<!--LIST-->
+
+<form id="contribute" name="contribute" method="post" action=".">
+<table class="table table-bordered table-hover">
+<tr><td class="info">お名前</td><td><input type="text" class="form-control col-lg-8" id="name" name="name" placeholder="お名前" /></td></tr>
+<tr><td class="info">Email（任意）</td><td><input type="text" class="form-control col-lg-8" id="email" name="email" placeholder="Email" /></td></tr>
+<tr><td class="info">コメント</td>
+<td><textarea class="form-control" id="message" name="message" rows="3"></textarea></td></tr>
+<tr><td class="info">URL（任意）</td><td><input type="text" class="form-control col-lg-8" id="url" name="url" placeholder="URL" /></td></tr>
+</table>
+
+<div class="text-center">
+<input type="hidden" name="action" value="regist">
+<input type="hidden" name="res" value="<!--NO-->">
+<input type="submit" class="btn btn-default" value="書き込む">
+</div>
+</form>
+
+<hr />
+
+</div>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

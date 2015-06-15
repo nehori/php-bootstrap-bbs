@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../../css/bootstrap.css" rel="stylesheet" media="screen">
+<title>雑談・質問 掲示板</title>
+</head>
+<body>
+
+<div class="container">
+<br><br>
+<div id="header" class="clearfix">
+<div id="boxD">
+<h2><a href="http://uguisu.skr.jp/">雑談・質問 掲示板</a></h2>
+<p><!--MESSAGE--></p>
+</div>
+</div>
+
+</div>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

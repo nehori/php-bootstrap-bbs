@@ -1,0 +1,21 @@
+<div class='row'>
+<div class='container'>
+<div class='panel panel-info'>
+<div class='panel-heading' style='word-wrap:break-word;'>
+<p>No.<!--NO-->　<strong><!--SUBJECT--></strong></p>
+</div>
+<div class='panel-body' style='word-wrap:break-word;'>
+<p>投稿者/<!--NAME--><br />投稿日/<!--DATE--></p>
+
+<p class="text-warning"><!--MESSAGE--></p>
+
+<p class="text-warning"><!--URL--></p>
+
+<!--LIST_SUB-->
+
+<!--RESPRO-->
+
+</div>
+</div>
+</div>
+</div>
