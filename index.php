@@ -92,8 +92,6 @@ function regist($res) {
 //		list($nno) = explode(",", $data[0]);
 		$no = $nno + 1;
 	}
-	print($name . " = ". $nname . "\n");
-	print($message . " = ". $nmessage . "\n");
 	if ($name != $nname || $message != $nmessage) { // 2重投稿判定
 		// 子記事
 		if ($res !== 0) {
