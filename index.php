@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2015 Kazutaka Yasuda
+ * Copyright (c) 2023 Kazutaka Yasuda
  * Released under the MIT license
  * http://opensource.org/licenses/mit-license.php
  */
@@ -20,9 +20,9 @@ $respro_mdl    = "./mdl/respro.mdl";
 $list_sub_mdl  = "./mdl/list_sub.mdl";
 
 // 投稿記事内容にふさわしくない語句の禁止
-$words = array('url=http','セレブ','女優','=====','セクシー','人妻','乱交','セックス', 'あああ','sex','SEX','馬鹿','FUCK','尿','うんこ','性感染','奥さま','↓↓','濡れやすい','性欲','嬢','dell','DELL','Dell', 'a href');
+$words = array('url=http','乱交','セックス','SEX','↓↓','濡れやすい','性欲');
 // 投稿記事内容にふさわしくないIPアドレスの禁止
-$ip_address = array('', '', '');
+$ip_address = array('');
 
 // -----------------------------------------------------
 
@@ -61,7 +61,7 @@ function regist($res) {
 	if (!$_POST["name"]){ error("名前が入力されていません"); }
 	if (!$_POST["message"]){ error("内容が入力されていません"); }
 	if (mb_strlen($_POST["message"], "UTF-8") > $com_max) { error("投稿記事の文字数が多すぎます。"); }
-	if (!matchesIn($_POST["referer"], "uguisu.skr.jp")) {  error("リファラが正しくありません。直アクセスは禁止です。");  }
+#	if (!matchesIn($_POST["referer"], "uguisu.skr.jp")) {  error("リファラが正しくありません。直アクセスは禁止です。");  }
 	if (!checkIp($_SERVER["REMOTE_ADDR"])){ error("書き込み権限がありません。"); }
 	if (!isvalidstr($_POST["message"])){ error("内容が不適切と判断されました。"); }
 	if (!isvalidstr($_POST["subject"])){ error("内容が不適切と判断されました。"); }
@@ -88,10 +88,12 @@ function regist($res) {
 	if (sizeof($data) < 1) {	 // データにNoを付けて配列に格納
 		$no = 1; $nname = ""; $nmessage = ""; // 初期化
 	} else {
-//		list($nno, $nres, $nname, $nmail, $nsubject, $ndate, $nmessage, $ncolor) = explode(",", $data[1]);
-		list($nno) = explode(",", $data[0]);
+		list($nno, $nres, $nname, $nmail, $nsubject, $ndate, $nmessage, $ncolor) = explode(",", $data[1]);
+//		list($nno) = explode(",", $data[0]);
 		$no = $nno + 1;
 	}
+	print($name . " = ". $nname . "\n");
+	print($message . " = ". $nmessage . "\n");
 	if ($name != $nname || $message != $nmessage) { // 2重投稿判定
 		// 子記事
 		if ($res !== 0) {

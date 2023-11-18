@@ -8,8 +8,8 @@
 function convstr($str){
 	$str = htmlspecialchars($str);	// タグを取り除く
 	$str = stripslashes($str);		// 不要な「\」を取り除く
-	$str = ereg_replace(",", "&#44;", $str); // 文字列内のコンマを変換する
-	$str = ereg_replace("\r|\n|\r\n", "<br />", $str); // 文字列内の改行を<br />タグに変換する
+	$str = preg_replace("/,/", "&#44;", $str); // 文字列内のコンマを変換する
+	$str = preg_replace("/\r|\n|\r\n/", "<br />", $str); // 文字列内の改行を<br />タグに変換する
 	return $str;
 }
 
